@@ -28,6 +28,5 @@ void	ft_putchar(char c);
 void	ft_putnbr(int n);
 void	ft_putstr(const char *str);
 
-extern int	g_global_received;
 
 #endif
