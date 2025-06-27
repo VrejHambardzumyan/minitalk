@@ -6,7 +6,7 @@
 /*   By: vhambard <vhambard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:10:26 by vhambard          #+#    #+#             */
-/*   Updated: 2025/06/22 20:50:26 by vhambard         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:09:12 by vhambard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_putstr(const char *str)
 	if (!str)
 		return ;
 	while (*str)
-		write(STDOUT_FILENO, str++, 1);
+		write(1, str++, 1);
 }
 
 void	ft_putchar(char c)
 {
-	write(STDOUT_FILENO, &c, 1);
+	write(1, &c, 1);
 }
 
 void	ft_putnbr(int n)
@@ -40,13 +40,6 @@ void	ft_putnbr(int n)
 	if (n >= 10)
 		ft_putnbr(n / 10);
 	ft_putchar((n % 10) + '0');
-}
-
-void	error_exit(const char *message)
-{
-	ft_putstr(message);
-	ft_putchar('\n');
-	exit(EXIT_FAILURE);
 }
 
 int	ft_atoi(const char *str)
